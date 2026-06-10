@@ -28,7 +28,7 @@ export function SourcingFlow() {
 
   return (
     <div className="mt-6">
-      <div className="text-[10px] uppercase tracking-[0.24em] text-haveli-gold">
+      <div className="text-[10px] uppercase tracking-[0.24em] text-trivest-teal">
         How I engage founders
       </div>
 
@@ -45,7 +45,7 @@ export function SourcingFlow() {
                 <>
                   <span className="absolute left-[19px] top-1/2 h-[72px] w-px bg-foreground/15" />
                   <span
-                    className={`absolute left-[19px] top-1/2 h-[72px] w-px origin-top bg-haveli-gold transition-transform duration-500 ${
+                    className={`absolute left-[19px] top-1/2 h-[72px] w-px origin-top bg-trivest-teal transition-transform duration-500 ${
                       isDone ? "scale-y-100" : "scale-y-0"
                     }`}
                   />
@@ -56,22 +56,22 @@ export function SourcingFlow() {
               <div
                 className={`relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-500 ${
                   isActive
-                    ? "scale-110 border-haveli-gold bg-haveli-gold/15 text-haveli-gold shadow-glow"
+                    ? "scale-110 border-trivest-teal bg-trivest-teal/15 text-trivest-teal shadow-glow"
                     : isDone
-                      ? "border-haveli-gold/50 bg-card text-haveli-gold/80"
+                      ? "border-trivest-teal/50 bg-card text-trivest-teal/80"
                       : "border-foreground/15 bg-card text-muted-foreground"
                 }`}
               >
                 <Icon className="h-[18px] w-[18px]" />
                 {isActive && (
-                  <span className="absolute inset-0 rounded-full border border-haveli-gold/60 animate-ping motion-reduce:animate-none" />
+                  <span className="absolute inset-0 rounded-full border border-trivest-teal/60 animate-ping motion-reduce:animate-none" />
                 )}
               </div>
 
               {/* label + value line */}
               <div>
                 <div className="flex items-baseline gap-2">
-                  <span className="font-mono text-[10px] text-haveli-gold/70">0{i + 1}</span>
+                  <span className="font-mono text-[10px] text-trivest-teal/70">0{i + 1}</span>
                   <span
                     className={`font-serif text-lg transition-colors duration-500 ${
                       lit ? "text-foreground" : "text-foreground/50"
@@ -95,7 +95,7 @@ export function SourcingFlow() {
 
       {/* flywheel caption */}
       <div className="mt-2 flex items-center gap-2 border-t border-foreground/10 pt-4 text-xs text-muted-foreground">
-        <RotateCw className="h-3.5 w-3.5 shrink-0 animate-spin text-haveli-gold/70 [animation-duration:6s] motion-reduce:animate-none" />
+        <RotateCw className="h-3.5 w-3.5 shrink-0 animate-spin text-trivest-teal/70 [animation-duration:6s] motion-reduce:animate-none" />
         An always-on flywheel — every relationship compounds the next.
       </div>
     </div>

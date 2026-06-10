@@ -1,14 +1,14 @@
-# Keystone Capital — A Proposal from Dan Herr
+# Trivest Partners — A Proposal from Dan Herr
 
-A personal pitch site presenting Dan Herr's proposal to join Keystone Capital, covering direct deal sourcing, brand-building, and AI-native origination at scale.
+A personal pitch site presenting Dan Herr's proposal to join Trivest Partners, covering direct deal sourcing of founder-owned businesses, founder-first brand-building, and AI-native origination at scale.
 
-**Live site:** [keystonelovesdan.com](https://keystonelovesdan.com)
+**Live site:** [trivestlovesdan.com](https://trivestlovesdan.com)
 
 ## Tech Stack
 
 - **React 19** with TypeScript
 - **TanStack Router** for client-side routing
-- **Tailwind CSS v4** with custom Keystone-branded design tokens
+- **Tailwind CSS v4** with custom Trivest-branded design tokens
 - **Vite** for bundling and dev server
 - **Bun** as the package manager
 
@@ -35,10 +35,10 @@ The site deploys automatically to GitHub Pages on every push to `main` via the w
 
 ### Custom Domain Setup
 
-The `public/CNAME` file is configured for `keystonelovesdan.com`. To connect the domain:
+The `public/CNAME` file is configured for `trivestlovesdan.com`. To connect the domain:
 
 1. In your DNS provider, add **one** of the following:
-   - A `CNAME` record: `keystonelovesdan.com` → `danherrski.github.io`
+   - A `CNAME` record: `trivestlovesdan.com` → `DanHerrski.github.io`
    - Or four `A` records pointing to GitHub Pages IPs:
      ```
      185.199.108.153
@@ -46,7 +46,7 @@ The `public/CNAME` file is configured for `keystonelovesdan.com`. To connect the
      185.199.110.153
      185.199.111.153
      ```
-2. In the repo's **Settings → Pages**, set the custom domain to `keystonelovesdan.com` and enable "Enforce HTTPS."
+2. In the repo's **Settings → Pages**, set the custom domain to `trivestlovesdan.com` and enable "Enforce HTTPS."
 
 ## Project Structure
 
