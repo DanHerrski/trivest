@@ -43,7 +43,7 @@ export function BrandCarousel() {
 
   return (
     <div className="mt-6">
-      <div className="text-[10px] uppercase tracking-[0.24em] text-haveli-gold">
+      <div className="text-[10px] uppercase tracking-[0.24em] text-trivest-teal">
         Brand as sourcing
       </div>
 
@@ -51,7 +51,7 @@ export function BrandCarousel() {
         href={site.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-2 block overflow-hidden rounded-xl border border-foreground/10 shadow-elegant transition hover:border-haveli-gold/30"
+        className="mt-2 block overflow-hidden rounded-xl border border-foreground/10 shadow-elegant transition hover:border-trivest-teal/30"
       >
         {/* Browser chrome */}
         <div className="flex items-center gap-2 border-b border-foreground/10 bg-secondary/60 px-3 py-1.5">
@@ -100,9 +100,7 @@ export function BrandCarousel() {
               }, 250);
             }}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === active
-                ? "w-6 bg-haveli-gold"
-                : "w-1.5 bg-foreground/20 hover:bg-foreground/40"
+              i === active ? "w-6 bg-trivest-teal" : "w-1.5 bg-foreground/20 hover:bg-foreground/40"
             }`}
           />
         ))}
