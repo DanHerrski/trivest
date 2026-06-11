@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Factory, Code2 } from "lucide-react";
 import danPortrait from "@/assets/dan-portrait.jpg";
 import { TrivestMark } from "@/components/TrivestMark";
 import { IntroVideo } from "@/components/IntroVideo";
@@ -16,6 +16,13 @@ import logoGoMoment from "@/assets/logos/gomoment.jpg";
 import logoGabbart from "@/assets/logos/gabbart.png";
 import logoLunchbox from "@/assets/logos/lunchbox-orders.png";
 import logoNwn from "@/assets/logos/nwn.png";
+import logoConceptGroup from "@/assets/logos/concept-group.webp";
+import logoMicrowaveComponents from "@/assets/logos/microwave-components.png";
+import logoGemini from "@/assets/logos/gemini-electronic-components.png";
+import logoSeaLink from "@/assets/logos/sea-link-international.jpg";
+import logoCliplight from "@/assets/logos/cliplight.png";
+import logoAdhere from "@/assets/logos/adhere-industrial-tapes.png";
+import logoEllisPaint from "@/assets/logos/ellis-paint.jpg";
 import { SourcingFlow } from "@/components/proofpoints/SourcingFlow";
 import { BrandCarousel } from "@/components/proofpoints/BrandCarousel";
 import { VirtuousCycle } from "@/components/proofpoints/VirtuousCycle";
@@ -56,6 +63,25 @@ const deals = [
   { name: "GoMoment / Ivy", logo: logoGoMoment },
   { name: "Lunchbox Orders", logo: logoLunchbox },
   { name: "NWN Corporation", logo: logoNwn },
+];
+// Industrials & manufacturing deals from Dan's Castle Crow M&A years — founder-
+// and family-owned niche manufacturers. They show Dan's range across exactly the
+// kind of fragmented, founder-led markets Trivest invests in beyond software.
+const industrialsDeals = [
+  { name: "Gemini Electronic Components", label: "Gemini", logo: logoGemini },
+  { name: "Microwave Components", logo: logoMicrowaveComponents },
+  { name: "Concept Group", logo: logoConceptGroup },
+  { name: "Sea Link International", label: "Sea Link", logo: logoSeaLink },
+  { name: "Sinclair Manufacturing", label: "Sinclair" },
+  { name: "Cliplight Manufacturing", label: "Cliplight", logo: logoCliplight },
+  { name: "Adhere Industrial Tape", label: "Adhere", logo: logoAdhere },
+  { name: "Ellis Paint", logo: logoEllisPaint },
+];
+// One unified track-record wall — industrials lead, software follows. Each tile
+// carries a small sector icon (see legend).
+const allDeals = [
+  ...industrialsDeals.map((d) => ({ ...d, sector: "industrials" as const })),
+  ...deals.map((d) => ({ ...d, sector: "software" as const })),
 ];
 const firms = [
   "Serent Capital",
@@ -341,37 +367,62 @@ function Index() {
               A proven track record of proprietary, founder-sourced deals
             </h3>
             <p className="hidden max-w-xs text-sm text-muted-foreground md:block">
-              A representative slice — much of it founder- and family-owned software and
-              tech-enabled services. Full deal sheet on request.
+              A representative slice — founder- and family-owned businesses across software &
+              tech-enabled services and niche industrials & manufacturing. The sourcing motion is
+              identical in any fragmented, founder-led market. Full deal sheet on request.
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap justify-center">
-            {deals.map((d) => (
-              <div
-                key={d.name}
-                className="flex aspect-[3/2] w-1/2 flex-col items-center justify-center gap-2.5 bg-card px-4 text-center outline outline-1 outline-foreground/10 transition hover:bg-secondary sm:w-1/3 md:w-1/4 lg:w-[calc(100%/6)]"
-              >
-                {d.logo && (
+          {/* Legend for the per-tile sector icons */}
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            <span className="flex items-center gap-2">
+              <Factory className="h-3.5 w-3.5 text-trivest-teal" aria-hidden="true" />
+              Industrials &amp; manufacturing
+            </span>
+            <span className="flex items-center gap-2">
+              <Code2 className="h-3.5 w-3.5 text-trivest-teal" aria-hidden="true" />
+              Software &amp; tech-enabled
+            </span>
+          </div>
+
+          <div className="mt-5 flex flex-wrap justify-center">
+            {allDeals.map((d) => {
+              const isIndustrials = d.sector === "industrials";
+              const SectorIcon = isIndustrials ? Factory : Code2;
+              return (
+                <div
+                  key={d.name}
+                  className="group relative flex aspect-[3/2] w-1/2 flex-col items-center justify-center gap-2.5 bg-card px-4 text-center outline outline-1 outline-foreground/10 transition hover:bg-secondary sm:w-1/3 md:w-1/4 lg:w-[calc(100%/6)]"
+                >
+                  <SectorIcon
+                    className="absolute right-2 top-2 h-3.5 w-3.5 text-muted-foreground/40 transition group-hover:text-trivest-teal"
+                    aria-label={isIndustrials ? "Industrials & manufacturing" : "Software & tech-enabled"}
+                  />
                   <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white p-2.5 shadow-sm">
-                    <img
-                      src={d.logo}
-                      alt={`${d.name} logo`}
-                      loading="lazy"
-                      className="max-h-full max-w-full object-contain"
-                    />
+                    {d.logo ? (
+                      <img
+                        src={d.logo}
+                        alt={`${d.name} logo`}
+                        loading="lazy"
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    ) : (
+                      <span className="font-serif text-sm font-semibold leading-none text-neutral-800">
+                        {d.label ?? d.name}
+                      </span>
+                    )}
                   </span>
-                )}
-                <span className="font-serif text-sm leading-tight text-foreground/80 md:text-base">
-                  {d.label ?? d.name}
-                </span>
-              </div>
-            ))}
+                  <span className="font-serif text-sm leading-tight text-foreground/80 md:text-base">
+                    {d.label ?? d.name}
+                  </span>
+                </div>
+              );
+            })}
             <a
               href="mailto:dherr@tahoeequity.com?subject=Trivest%20%E2%80%94%20full%20deal%20sheet"
               className="group flex aspect-[3/2] w-1/2 flex-col items-center justify-center gap-1 bg-card px-4 text-center outline outline-1 outline-trivest-teal/40 transition hover:bg-secondary sm:w-1/3 md:w-1/4 lg:w-[calc(100%/6)]"
             >
-              <span className="font-serif text-xl text-trivest-teal">+ 8 more</span>
+              <span className="font-serif text-xl text-trivest-teal">Full sheet</span>
               <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground transition group-hover:text-trivest-teal">
                 Full deal sheet →
               </span>
