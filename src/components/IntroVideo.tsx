@@ -6,7 +6,7 @@ import videoPoster from "@/assets/trivest/Dan Herr Trivest Video thumbnail.jpg";
 // recorded and the hero swaps from the poster to a click-to-play embed
 // automatically — no layout changes needed. Leaving it empty shows the
 // branded poster thumbnail with a "landing this week" badge.
-const INTRO_VIDEO_ID = "";
+const INTRO_VIDEO_ID = "2YlIBe0mDjw";
 
 export function IntroVideo() {
   const [playing, setPlaying] = useState(false);
