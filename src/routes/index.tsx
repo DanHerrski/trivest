@@ -85,21 +85,27 @@ const allDeals = [
 ];
 const firms = [
   "Serent Capital",
-  "ArbiterSports",
-  "KEV Group",
-  "Progress Learning",
-  "Revinate",
+  "Shore Capital",
+  "Alpine Investors",
+  "The Riverside Company",
+  "Audax",
+  "Incline Equity",
+  "Tonka Bay",
+  "Mainsail Partners",
   "Fulham & Company",
   "Stonebridge Partners",
   "Shoreview Industries",
   "Genstar",
-  "Alpine",
   "Pritzker Private Capital",
   "The Edgewater Funds",
   "HIG",
   "RPM International",
   "New Water Capital",
   "The Jordan Company",
+  "ArbiterSports",
+  "KEV Group",
+  "Progress Learning",
+  "Revinate",
 ];
 
 function Index() {
@@ -302,20 +308,27 @@ function Index() {
           <div className="mt-8 space-y-5 font-serif text-2xl font-light leading-relaxed text-trivest-navy md:text-3xl">
             <p>Russ —</p>
             <p>
-              We've known each other a long time — back to 2014, when I was at Castle Crow sending
-              deals your way. You all were generous enough to send a thank-you my way more than once
-              for the flow.
+              Going all the way back to 2014 and my first Castle Crow days, you were always one of
+              the best in the business at engaging founders, and you all thoughtfully designed simple
+              ways to create loyalty with your intermediary channels through thoughtful notes, swag,
+              and a general sense of appreciation you provided for the hard work we put in.
             </p>
             <p>
-              Since then, I've watched Trivest grow into the name founders actually trust — and I've
-              seen deal sourcing enter a new era. I believe there's a rare opportunity to build a
-              dominant origination engine at Trivest, at the intersection of direct sourcing,
-              founder-first brand building, and AI-native tech-enablement.
+              Since then I've watched Trivest become a name founders genuinely trust once they get to
+              know you, and my sense is that there's a really compelling opportunity in the next era
+              of sourcing for Trivest. I genuinely feel we have a rare opportunity to build a dominant
+              branded origination engine at Trivest — on the foundation you've already built — where
+              direct sourcing, founder-first brand, and AI compound. I imagine a world where we've
+              built such a presence and so much good will that founders in our industries of interest
+              not only know us, but are looking forward to our call.
             </p>
             <p>
-              That's where I've been building, and I put this proposal together because I think
-              there may be a compelling fit.
+              I'd love to continue the conversation about building this future of sourcing with you.
+              Would love to schedule some time for late June to continue the dialog, or to get
+              together in-person in Miami or wherever works best for you and the team — I'll bring the
+              whole plan.
             </p>
+            <p>Looking forward to it my friend.</p>
           </div>
           <div className="mt-10 flex items-center gap-4 text-sm text-muted-foreground">
             <div className="h-px w-12 bg-trivest-teal" />
