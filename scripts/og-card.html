@@ -14,10 +14,13 @@
         width: 100vw;
         height: 100vh;
         overflow: hidden;
+        /* darkest gradient stop — fills any sub-pixel gap so the frame
+           never shows white at the right/bottom edges */
+        background: #102f57;
       }
       .card {
-        width: 100vw;
-        height: 100vh;
+        width: 101vw;
+        height: 101vh;
         position: relative;
         overflow: hidden;
         background: radial-gradient(120% 140% at 12% 0%, #1f5596 0%, #184784 42%, #102f57 100%);
