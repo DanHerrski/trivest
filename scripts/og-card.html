@@ -11,20 +11,23 @@
       }
       html,
       body {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        /* darkest gradient stop — fills any sub-pixel gap so the frame
-           never shows white at the right/bottom edges */
-        background: #102f57;
+        margin: 0;
+        /* magenta canvas so any unpainted area is obvious in QA; the card
+           is cropped out at exactly 1200x630 so this is never shipped */
+        background: #ff00ff;
       }
+      /* Fixed 1200x630 px card pinned to the top-left. Rendered inside a
+         larger window, then cropped to exactly this box — so the gradient
+         is painted edge to edge with no viewport-gutter gap or seam. */
       .card {
-        width: 101vw;
-        height: 101vh;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1200px;
+        height: 630px;
         overflow: hidden;
         background: radial-gradient(120% 140% at 12% 0%, #1f5596 0%, #184784 42%, #102f57 100%);
-        padding: 5.6vh 8vw 5.2vh;
+        padding: 56px 96px 52px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -33,15 +36,15 @@
       .card::after {
         content: "";
         position: absolute;
-        right: -13vw;
-        bottom: -32vh;
-        width: 47vw;
-        height: 89vh;
+        right: -160px;
+        bottom: -200px;
+        width: 560px;
+        height: 560px;
         border-radius: 50%;
         background: radial-gradient(circle, rgba(68, 186, 163, 0.26) 0%, rgba(68, 186, 163, 0) 70%);
       }
       .logo {
-        width: 30vw;
+        width: 352px;
         height: auto;
         position: relative;
         z-index: 2;
@@ -51,16 +54,16 @@
         z-index: 2;
       }
       .rule {
-        width: 7vw;
-        height: 0.8vh;
+        width: 84px;
+        height: 5px;
         background: #44baa3;
         border-radius: 3px;
-        margin-bottom: 5vh;
+        margin-bottom: 30px;
       }
       h1 {
         font-family: "Merriweather", Georgia, serif;
         font-weight: 700;
-        font-size: 6.6vw;
+        font-size: 78px;
         line-height: 1.06;
         color: #ffffff;
         letter-spacing: -0.5px;
@@ -69,8 +72,8 @@
         color: #44baa3;
       }
       .sub {
-        margin-top: 4.4vh;
-        font-size: 2.75vw;
+        margin-top: 28px;
+        font-size: 32px;
         font-weight: 500;
         color: rgba(255, 255, 255, 0.82);
         letter-spacing: 0.2px;
@@ -83,13 +86,13 @@
         justify-content: space-between;
       }
       .url {
-        font-size: 2.25vw;
+        font-size: 27px;
         font-weight: 600;
         color: #44baa3;
         letter-spacing: 0.4px;
       }
       .who {
-        font-size: 2vw;
+        font-size: 24px;
         font-weight: 500;
         color: rgba(255, 255, 255, 0.7);
       }
